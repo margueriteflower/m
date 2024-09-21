@@ -113,6 +113,47 @@ export class TextAnimator {
 		});
 	}
 
+	reverse() {
+		// Reset any ongoing animations
+		this.reset();
+
+		// Query all individual characters in the line for animation.
+		const chars = this.splitter.getChars();
+
+		chars.forEach((char, position) => {
+			let initialHTML = char.innerHTML;
+			let repeatCount = 0;
+
+			gsap.fromTo(
+				char,
+				{ opacity: 1 },
+				{
+					duration: 0.03,
+					onStart: () => {
+						// Set --opa to 1 at the start of the animation
+						gsap.set(char, { '--opa': 1 });
+					},
+					onComplete: () => {
+						// gsap.set(char, { innerHTML: initialHTML, delay: 0.03 });
+					},
+					repeat: 3,
+					onRepeat: () => {
+						repeatCount++;
+						if (repeatCount === 1) {
+							// Set --opa to 0 after the first repeat
+							gsap.set(char, { '--opa': 0 });
+						}
+					},
+					repeatRefresh: true,
+					repeatDelay: 0.04,
+					delay: (chars.length - position) * 0.07,
+					innerHTML: () => lettersAndSymbols[Math.floor(Math.random() * lettersAndSymbols.length)],
+					opacity: 0
+				}
+			);
+		});
+	}
+
 	reset() {
 		// Reset the text to its original state
 		const chars = this.splitter.getChars();

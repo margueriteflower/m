@@ -1,6 +1,7 @@
 <script>
 	import { onMount } from 'svelte';
 	import { TextAnimator } from '$lib/textAnimator/text-animator.js';
+	import Experience from '$lib/webgl/Experience.svelte';
 
 	const init = () => {
 		document.querySelectorAll('.coming-soon p ').forEach((item) => {
@@ -20,6 +21,8 @@
 	});
 </script>
 
+<Experience />
+
 <div class="coming-soon">
 	<p>Coming Soon</p>
 </div>
@@ -28,7 +31,7 @@
 	.coming-soon {
 		height: 100svh;
 		width: 100vw;
-		background-color: white;
+		background-color: rgb(0, 0, 0);
 
 		display: flex;
 		align-items: center;
@@ -48,7 +51,7 @@
 		position: absolute;
 		opacity: var(--opa);
 
-		background: black;
+		background: rgb(255, 255, 255);
 		height: 100%;
 	}
 </style>
