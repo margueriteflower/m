@@ -2,6 +2,10 @@
 	import { onMount } from 'svelte';
 	import { TextAnimator } from '$lib/textAnimator/text-animator.js';
 	import Glitch from '../../webgl/glitch/Glitch.svelte';
+	import gsap from 'gsap';
+
+	let component = $state();
+	let ctx = $state('');
 
 	const init = () => {
 		document.querySelectorAll('.coming-soon p ').forEach((item) => {
@@ -11,19 +15,25 @@
 			});
 
 			setTimeout(() => {
+				ctx.add(() => {
+					gsap.set('.abs', { opacity: 0 });
+					gsap.set('p', { opacity: 1 });
+				});
 				animator.animate();
 			}, 1000);
 		});
 	};
 
 	onMount(() => {
+		ctx = gsap.context(() => {}, component);
 		init();
 	});
 </script>
 
 <Glitch />
 
-<div class="coming-soon">
+<div class="coming-soon" bind:this={component}>
+	<div class="abs">404 Not Found</div>
 	<p>Coming Soon</p>
 </div>
 
@@ -36,6 +46,19 @@
 		display: flex;
 		align-items: center;
 		justify-content: center;
+
+		font-size: 14px;
+	}
+
+	p {
+		opacity: 0;
+	}
+
+	.abs {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
 	}
 
 	:global(.coming-soon p .char) {

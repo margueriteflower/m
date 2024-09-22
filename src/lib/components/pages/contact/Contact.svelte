@@ -30,7 +30,7 @@
 <div id="contact-page" bind:this={component}>
 	<ul>
 		<li>
-			<a href="/">
+			<a href="https://x.com/margueriteweb" target="_blank">
 				<div>TW</div>
 				@MARGUERITEWEB</a
 			>
@@ -60,7 +60,9 @@
 		align-items: center;
 		justify-content: space-between;
 		height: 100svh;
-		padding: 0 20px;
+		padding: 0 2rem;
+
+		font-size: 14px;
 	}
 
 	ul {
