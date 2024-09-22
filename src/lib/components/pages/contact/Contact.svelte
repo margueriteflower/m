@@ -1,7 +1,7 @@
 <script>
 	import { onMount } from 'svelte';
 	import { TextAnimator } from '$lib/textAnimator/text-animator.js';
-	import Experience from '$lib/webgl/Experience.svelte';
+	import Glitch from '../../../webgl/glitch/Glitch.svelte';
 
 	let component = $state();
 
@@ -25,7 +25,7 @@
 	});
 </script>
 
-<Experience />
+<Glitch />
 
 <div id="contact-page" bind:this={component}>
 	<ul>

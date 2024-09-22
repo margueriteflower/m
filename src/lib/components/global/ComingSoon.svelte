@@ -1,7 +1,7 @@
 <script>
 	import { onMount } from 'svelte';
 	import { TextAnimator } from '$lib/textAnimator/text-animator.js';
-	import Experience from '$lib/webgl/Experience.svelte';
+	import Glitch from '../../webgl/glitch/Glitch.svelte';
 
 	const init = () => {
 		document.querySelectorAll('.coming-soon p ').forEach((item) => {
@@ -21,7 +21,7 @@
 	});
 </script>
 
-<Experience />
+<Glitch />
 
 <div class="coming-soon">
 	<p>Coming Soon</p>
