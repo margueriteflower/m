@@ -6,6 +6,10 @@
 
 	onMount(() => {
 		const experience = new Experience(canvas);
+
+		return () => {
+			experience.destroy();
+		};
 	});
 </script>
 

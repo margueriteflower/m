@@ -1,5 +1,6 @@
 <script>
 	import ComingSoon from '../lib/components/global/ComingSoon.svelte';
+	import Contact from '$lib/components/pages/contact/Contact.svelte';
 </script>
 
 <svelte:head>
@@ -10,4 +11,6 @@
 	/>
 </svelte:head>
 
-<ComingSoon />
+<!-- <ComingSoon /> -->
+
+<Contact />

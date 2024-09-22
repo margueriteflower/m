@@ -1,6 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap');
 
 :root {
+	--black: black;
+	--white: white;
 }
 
 * {
@@ -17,7 +19,8 @@ body {
 
 	-webkit-font-smoothing: antialiased;
 
-	color: rgb(255, 255, 255);
+	background-color: var(--black);
+	color: var(--white);
 }
 
 a,
@@ -25,4 +28,21 @@ button {
 	all: unset;
 	box-sizing: border-box;
 	cursor: pointer;
+}
+
+.char {
+	--opa: 0;
+	position: relative;
+}
+
+.char::after {
+	content: '';
+	width: 1ch;
+	top: 0;
+	left: 0;
+	position: absolute;
+	opacity: var(--opa);
+
+	background: rgb(255, 255, 255);
+	height: 100%;
 }
