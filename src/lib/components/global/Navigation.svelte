@@ -25,7 +25,8 @@
 </script>
 
 <nav bind:this={component}>
-	<a href="/assistant">ASSISTANT</a>
+	<a href="/">ASSISTANT</a>
+	<a href="/work">WORK</a>
 	<a href="/contact">CONTACT</a>
 </nav>
 
