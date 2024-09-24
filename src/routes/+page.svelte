@@ -1,5 +1,6 @@
 <script>
 	import Assistant from '../lib/assistant/Assistant.svelte';
+	import Glitch from '../lib/webgl/glitch/Glitch.svelte';
 </script>
 
 <svelte:head>

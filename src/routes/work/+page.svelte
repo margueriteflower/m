@@ -1,5 +1,6 @@
 <script>
 	import ComingSoon from '../../lib/components/global/ComingSoon.svelte';
+	import Glitch from '../../lib/webgl/glitch/Glitch.svelte';
 </script>
 
 <svelte:head>

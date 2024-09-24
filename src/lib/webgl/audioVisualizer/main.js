@@ -85,7 +85,7 @@ export default class Experience {
 					if (average < silenceThreshold) return 0;
 					return 4;
 				},
-				duration: 3
+				duration: 4
 			});
 		});
 	}
@@ -119,9 +119,9 @@ export default class Experience {
 	}
 
 	setTick() {
-		this.stats = new Stats();
-		this.stats.showPanel(0);
-		document.body.appendChild(this.stats.dom);
+		// this.stats = new Stats();
+		// this.stats.showPanel(0);
+		// document.body.appendChild(this.stats.dom);
 
 		this.previousTime = 0;
 
@@ -130,7 +130,7 @@ export default class Experience {
 	}
 
 	tick(t) {
-		this.stats.begin();
+		// this.stats.begin();
 
 		this.elapsedTime = t / 1000;
 		this.deltaTime = this.elapsedTime - this.previousTime;
@@ -141,7 +141,7 @@ export default class Experience {
 
 		this.mesh.material.uniforms.uTime.value = this.elapsedTime;
 
-		this.stats.end();
+		// this.stats.end();
 		this.animationFrameId = requestAnimationFrame(this.tick); // Save the new frame ID
 	}
 
