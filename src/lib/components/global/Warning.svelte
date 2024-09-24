@@ -50,7 +50,7 @@
 		tl.to('.description', {
 			maskPosition: '50% 0%',
 			delay: 0.1,
-			duration: 3, // Adjust the duration as needed
+			duration: 2, // Adjust the duration as needed
 			ease: 'power2.out'
 		});
 
@@ -83,6 +83,7 @@
 		height: 100svh;
 		width: 100vw;
 		background-color: rgb(0, 0, 0);
+		z-index: 999;
 
 		display: flex;
 		align-items: center;

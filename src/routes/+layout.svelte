@@ -9,9 +9,7 @@
 	let warning = $state('displayed');
 </script>
 
-<ComingSoon />
-
-<!-- <Navigation /> -->
+<Navigation />
 
 {#if warning === 'displayed'}
 	<Warning bind:warning />
