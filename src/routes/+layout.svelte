@@ -10,9 +10,9 @@
 </script>
 
 <Navigation />
-
+<!-- 
 {#if warning === 'displayed'}
 	<Warning bind:warning />
-{/if}
+{/if} -->
 
 {@render children()}
