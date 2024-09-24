@@ -1,4 +1,6 @@
 <script>
+	import { onMount } from 'svelte';
+
 	let textAnswer = $state('');
 	let textInput = $state('');
 	let processedText = $state(''); // Pour suivre le texte déjà traité
@@ -14,6 +16,10 @@
 	let bufferLength;
 	let currentSource = $state();
 	let raf = $state();
+
+	onMount(() => {
+		submitOPENAI('Presente toi en anglais');
+	});
 
 	const submitOPENAI = async (input) => {
 		try {
@@ -178,15 +184,24 @@
 		justify-content: flex-end;
 		flex-direction: column;
 		padding-bottom: 20px;
+
+		display: none;
 	}
 
 	form {
 		width: 680px;
-		height: 54px;
+		height: 48px;
 
 		display: flex;
 		align-items: center;
 		gap: 10px;
+
+		color: black;
+
+		background-color: white;
+		border-radius: 4px;
+
+		font-size: 14px;
 	}
 
 	input {
@@ -194,6 +209,17 @@
 		width: 80%;
 		border: 0;
 		border-radius: 4px;
+		font-family: 'JetBrains Mono', monospace;
+		padding: 0 10px;
+
+		&:focus {
+			outline: none;
+		}
+
+		&::placeholder {
+			font-family: 'JetBrains Mono', monospace;
+			font-size: 14px;
+		}
 	}
 
 	button {

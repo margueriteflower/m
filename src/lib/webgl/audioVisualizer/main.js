@@ -85,7 +85,7 @@ export default class Experience {
 					if (average < silenceThreshold) return 0;
 					return 4;
 				},
-				duration: 3
+				duration: 4
 			});
 		});
 	}
