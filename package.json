@@ -25,7 +25,9 @@
 	},
 	"type": "module",
 	"dependencies": {
+		"elevenlabs": "^0.16.0",
 		"gsap": "^3.12.5",
+		"openai": "^4.63.0",
 		"split-type": "^0.3.4",
 		"stats.js": "^0.17.0",
 		"three": "^0.168.0"

@@ -12,7 +12,6 @@ export default class Experience {
 		this.canvas = canvas;
 
 		this.scene = new THREE.Scene();
-		this.scene2 = new THREE.Scene();
 
 		this.setCamera();
 		this.events();
