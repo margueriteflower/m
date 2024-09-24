@@ -1,5 +1,6 @@
 <script>
 	import { onMount } from 'svelte';
+	import { jessicaIntroduction } from '../../routes/store';
 
 	let textAnswer = $state('');
 	let textInput = $state('');
@@ -18,7 +19,10 @@
 	let raf = $state();
 
 	onMount(() => {
-		submitOPENAI('Presente toi en anglais');
+		if ($jessicaIntroduction === false) {
+			jessicaIntroduction.set(true);
+			submitOPENAI('Presente toi en anglais');
+		}
 	});
 
 	const submitOPENAI = async (input) => {
