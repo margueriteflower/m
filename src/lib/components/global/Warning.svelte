@@ -96,10 +96,10 @@
 	.description {
 		-webkit-mask-image: radial-gradient(circle, transparent 40%, black 60%);
 		mask-image: radial-gradient(circle, transparent 40%, black 60%);
-		-webkit-mask-size: 50% 50%;
-		mask-size: 50% 50%;
-		-webkit-mask-position: 50% 100%;
-		mask-position: 50% 100%;
+		-webkit-mask-size: 400% 400%;
+		mask-size: 400% 400%;
+		-webkit-mask-position: 50% 0%;
+		mask-position: 50% 0%;
 
 		pointer-events: none;
 	}
